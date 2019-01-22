@@ -1,0 +1,317 @@
+﻿@model MvcApplication2.Models.BOMDetails
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Adani Wilmar :: Mundra </title>
+   
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="~/new/js/html5-trunk.js"></script>
+    <link href="~/new/icomoon/style.css" rel="stylesheet">
+    <link href="~/new/css/nvd-charts.css" rel="stylesheet">
+    <!-- Bootstrap css -->
+    <link href="~/new/css/main.css" rel="stylesheet">
+    <!-- fullcalendar css -->
+    <link href='~/new/css/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='~/new/css/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+</head>
+<body>
+    <header>
+
+        <div class="row-fluid">
+            <div class="span3">
+                <a href="#" class="logo">
+                    <img src="~/new/img/logo1.png" style="width:185px">
+
+                </a>
+            </div>
+            <div class="span6" style="align-items:center; margin-top: -79px; color: #FFF;" align="center">
+
+
+
+                <h3>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturing Automation System </h3>
+                <h4 style="margin-top:-8px !important;">  &nbsp;&nbsp;&nbsp;&nbsp;(PLC to SAP) </h4>
+            </div>
+            <div class="span3">
+                <div id="mini-nav">
+                    <ul class="hidden-phone">
+                        <li>
+                            <a href="#">Mundra Plant </a>
+                        </li>
+                        <li>
+                            <a href="#">Welcome @ViewBag.LoggedInUser</a>
+                        </li>
+                        <li>
+                            <a href="" onclick="Logout()"> Logout  <span class="fs1" aria-hidden="true" data-icon="&#xe0b1;"></span></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="dashboard-wrapper" style="margin-left:5px !important;">
+            <div id="main-nav" class="hidden-phone hidden-tablet">
+                <ul>
+                    <li>
+                        <a href="@Url.Action("GetPOList", "Admin")" class="selected">
+                            <span class="list-alt" aria-hidden="true" data-icon=""></span><i class="list-alt"></i> Process Order List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetSubmitedPOList", "Admin")" >
+                            <span class="fs1" aria-hidden="false" data-icon=""></span> Submitted PO List
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="@Url.Action("RegisterUser", "Admin")">
+                            <span class="fs1" aria-hidden="list-alt" data-icon=""></span> Manage Users
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="main-container">
+                <div class="navbar hidden-desktop">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <div class="nav-collapse collapse navbar-responsive-collapse">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="widget no-margin">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon=""></span>  Process Order Details
+                                </div>
+
+                             <!-- <form action="/admin/dosearch/" id="seachdate" method="post" class="signin-wrapper" >-->   
+                               @using (Html.BeginForm("dosearch", "Admin", FormMethod.Post))
+                                {
+                                    <div class="title" style="">
+                                        &emsp; &emsp;  <span style="line-height:10px;">From Date :</span>
+                                        <span class="datetimepicker12">
+                                            <input required data-format="dd-MM-yyyy" type="text" name="selected_start" id="selected_start" class="readonly">
+                                            <span class="add-on" style="font-size:24px; cursor:pointer;"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                                        </span> &emsp; &emsp;
+                                        To Date :
+                                        <span class="datetimepicker12">
+                                            <input required data-format="dd-MM-yyyy" type="text" name="selected_end" id="selected_end" class="readonly">
+                                            <span class="add-on" style="font-size:24px; cursor:pointer;"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                                        </span>&emsp; &emsp;
+                                        <span >
+                                            <input class="btn btn-primary" style="margin-bottom:12px;" id="btnSubmit" type="submit" name="search" value="Search">
+                                        </span>
+                                    </div>
+                               }
+                            </div>
+                            <div class="widget-body">
+                                
+
+
+                                <div id="dt_example" class="example_alt_pagination">
+
+
+                                    <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:10%; display:none;">SR.NO.</th>
+                                                <th style="width:5%">SR.NO.</th>
+                                                <th style="width:10%">PO Number</th>
+                                                <th style="width:15%" class="hidden-phone">Material</th>
+                                                <th style="width:15%" class="hidden-phone">Refinery</th>
+                                                <th style="width:15%" class="hidden-phone">Section</th>
+                                                <th style="width:12%" class="hidden-phone">Planned Start Date</th>
+                                                <th style="width:12%" class="hidden-phone">Planned End Date</th>
+                                                <th style="width:10%" class="hidden-phone">Saved Status</th>
+                                                <th style="width:10%" class="hidden-phone">Saved Date</th>
+                                                <th style="width:20%" class="hidden-phone">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @{
+                                                
+                                              var counter = 1;
+                                              var Status_yes = "Saved";
+                                              var Status_no = "Not Save";
+                                            }
+
+                                            @for (int i = 0; i < Model.lstBOMDetails.Count; i++)
+                                            {
+                                                <tr class="gradeA">
+                                                    <td id="@("ID_"+i)" style="display:none;">@Model.lstBOMDetails[i].processOrederNo</td>
+                                                    <td>@counter</td>
+                                                    <td id="ProcessOrder">@Model.lstBOMDetails[i].processOrederNo</td>
+                                                    <td id="Material" class="hidden-phone" style="text-transform:uppercase;">@Model.lstBOMDetails[i].material</td>
+                                                    <td id="Refinery" class="hidden-phone" style="text-transform:uppercase;">@Model.lstBOMDetails[i].refineryName</td>
+                                                    <td id="Refinery" class="hidden-phone" style="text-transform:uppercase;">@Model.lstBOMDetails[i].subrefineryName</td>
+
+                                                    <td id="Refinery" class="hidden-phone">@Model.lstBOMDetails[i].PlanStartDate @Model.lstBOMDetails[i].PlanStartTime </td>
+
+                                                    <td id="Refinery" class="hidden-phone">@Model.lstBOMDetails[i].PlanEndDate @Model.lstBOMDetails[i].PlanEndTime </td>
+
+                                                    <td id="Refinery" class="hidden-phone">
+                                                       
+                                                        @if (@Model.lstBOMDetails[i].isSaved_id)
+                                                        {
+                                                            @Status_yes;
+                                                        }else{
+
+                                                            @Status_no;
+                                                        }
+                                                    </td>
+
+                                                    <td id="Refinery" class="hidden-phone" style="text-transform:uppercase;">@Model.lstBOMDetails[i].isSaveddate</td>
+
+                                                   
+                                                    <td class="hidden-phone" align="center">
+                                                        <p align="center">
+                                                            <button type="button" name="save" class="btn btn-primary" onclick="Load('@Model.lstBOMDetails[i].processOrederNo','@Model.lstBOMDetails[i].IDOCNumber')"> Load  </button>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+   
+                                                counter++;
+    
+                                               
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div>&emsp;</div>
+                <div>&emsp;</div>
+            </div>
+        </div><!-- dashboard-container -->
+    </div><!-- container-fluid -->
+
+
+    <header>
+        <p style="text-align:center; vertical-align: central;  margin-top:-57px; color:#FFFFFF; font-size:17px; font-weight:300;">
+            Design And  Developed by ECGIT Pune. For any issues please contact: <mailto:adaniwilmar.support@ecgit.com>adaniwilmar.support@ecgit.com</mailto:adaniwilmar.support@ecgit.com>
+        </p>
+    </header>
+    <script src="~/new/js/jquery.min.js"></script>
+    <script class="include" type="text/javascript" src="~/new/js/script.js"></script>
+    <style href="~/new/js/style.css" type="text/css"></style>
+    <script src="~/new/js/bootstrap.js"></script>
+    <link href="~/CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="~/CSS/bootstrap-datetimepicker.min.js"></script>
+    <!-- Flot charts -->
+    <script src="~/new/js/flot/jquery.flot.js"></script>
+    <script src="~/new/js/flot/jquery.flot.selection.js"></script>
+    <script src="~/new/js/flot/jquery.flot.pie.js"></script>
+    <script src="~/new/js/flot/jquery.flot.tooltip.js"></script>
+
+    <!-- Tiny scrollbar js -->
+    <script src="~/new/js/tiny-scrollbar.js"></script>
+
+    <!-- Sparkline charts -->
+    <script src="~/new/js/sparkline.js"></script>
+    <!-- Datatables JS -->
+    <script src="~/new/js/jquery.dataTables.js"></script>
+    <!-- Calendar Js -->
+    <script src='~/new/js/fullcalendar/jquery-ui-1.10.2.custom.min.js'></script>
+    <script src='~/new/js/fullcalendar/fullcalendar.min.js'></script>
+    <!-- Custom Js -->
+    <script src="~/new/js/custom-index.js"></script>
+    <script src="~/new/js/custom-calendar.js"></script>
+    <script src="~/new/js/theming.js"></script>
+    <script src="~/new/js/custom.js"></script>
+
+
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment-timezone.js"></script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        $('.datetimepicker12').datetimepicker({
+            language: 'pt-BR'
+        });
+    });
+    </script>
+
+
+
+
+
+    <script>
+        function Load(value,IDOCNumber) {
+
+          
+
+
+
+            var url = '@Html.Raw(@Url.Action("LoadProcessOrder", "Admin", new { Name = "Value" }))';
+            window.location.href = url.replace("Value", value +','+IDOCNumber);
+        }
+    </script>
+
+
+    <script>
+    function Logout() {
+
+        if (confirm("Are you sure to you want to logout?")) {
+
+            $.ajax({
+                url: '@Url.Action("LogOut","Login")',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response != null && response.status) {
+                      //  alert("Logged out Successfuly.");
+                        var name = sessionStorage.getItem("name");
+                        var id = sessionStorage.getItem("id");
+                        sessionStorage.removeItem(name);
+                        sessionStorage.removeItem(id);
+                        window.location.reload();
+
+
+                    }
+                }
+            });
+        }
+        return false;
+    }
+
+    function select_date() {
+    $(".dropdown-menu").css('display','none');
+    }
+
+
+
+    </script>
+    <script>
+    $(".readonly").keydown(function (e) {
+        e.preventDefault();
+    });
+
+
+    </script>
+
+</body>
+</html>

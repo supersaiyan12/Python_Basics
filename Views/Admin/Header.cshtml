@@ -1,0 +1,13 @@
+﻿
+<div id="header" style="background-color:#8F54A4;">
+    <img src="~/CSS/WilmarLogo.png" id="logo"/>
+   
+@if (ViewBag.IsAuthorized)
+    {
+    <div style="float: right; margin-right: 28px; margin-top:1%; font-size:18px;color:white;">Welcome @Html.Raw(ViewBag.LoggedInUser)<span><a href="#" onclick="Logout()" style="padding-left: 10px; color: rgb(255, 255, 255);position:relative;">Logout</a></span></div>
+    }
+
+    </div>
+
+
+

@@ -1,0 +1,756 @@
+Time: 21-03-2017 03:36:55 PM
+-----------------------------------------------------------
+Message: Cannot retrieve PI Point '\\PISERVER-AWLMUN\': string is empty or only has white spaces
+Parameter name: name
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 239
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 21-03-2017 03:46:52 PM
+-----------------------------------------------------------
+Message: Cannot retrieve PI Point '\\PISERVER-AWLMUN\': string is empty or only has white spaces
+Parameter name: name
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 239
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 21-03-2017 03:47:27 PM
+-----------------------------------------------------------
+Message: Cannot retrieve PI Point '\\PISERVER-AWLMUN\': string is empty or only has white spaces
+Parameter name: name
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 239
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:06:48 PM
+-----------------------------------------------------------
+Message: Cannot retrieve PI Point '\\PISERVER-AWLMUN\': string is empty or only has white spaces
+Parameter name: name
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 239
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:08:56 PM
+-----------------------------------------------------------
+Message: Cannot retrieve PI Point '\\PISERVER-AWLMUN\': string is empty or only has white spaces
+Parameter name: name
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 239
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:23:41 PM
+-----------------------------------------------------------
+Message: Procedure or function 'GetBomCategoryDetails' expects parameter '@Component', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:25:55 PM
+-----------------------------------------------------------
+Message: Procedure or function 'GetBomCategoryDetails' expects parameter '@Component', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:27:05 PM
+-----------------------------------------------------------
+Message: Procedure or function 'GetBomCategoryDetails' expects parameter '@Component', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 21-03-2017 04:28:01 PM
+-----------------------------------------------------------
+Message: Procedure or function 'GetBomCategoryDetails' expects parameter '@Component', which was not supplied.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:13:43 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:15:20 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:18:20 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:18:50 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:19:01 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:20:08 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:24:52 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:28:54 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:29:02 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:29:47 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:32:26 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:34:36 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:36:31 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:37:27 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:37:36 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:38:16 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:39:14 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:40:51 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:42:10 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:45:19 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:47:14 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid Boolean.
+StackTrace:    at System.Boolean.Parse(String value)
+   at System.Convert.ToBoolean(String value)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 96
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: mscorlib
+TargetSite: Boolean Parse(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 04:52:34 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: MvcApplication2
+TargetSite: System.Collections.Generic.List`1[MvcApplication2.Models.BOMMasterTag] getIsSavedList(System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 05:37:30 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 122
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 93
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: MvcApplication2
+TargetSite: System.String GetBomCategoryDetails(System.String, System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 05:37:52 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 122
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 93
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: MvcApplication2
+TargetSite: System.String GetBomCategoryDetails(System.String, System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 05:38:43 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: MvcApplication2
+TargetSite: System.String GetBomCategoryDetails(System.String, System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 05:40:46 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 22-03-2017 05:41:42 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:00:05 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.GetUOMFromPOTable(String component, String subRefinery, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 90
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 59
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 221
+Source: MvcApplication2
+TargetSite: System.String GetUOMFromPOTable(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:02:12 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Models.BOMMasterTag.GetUOMFromPOTable(String component, String subRefinery, String PONO)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: MvcApplication2
+TargetSite: System.String GetUOMFromPOTable(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:31:38 PM
+-----------------------------------------------------------
+Message: Invalid attempt to call Read when reader is closed.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.Read()
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Boolean TryReadInternal(Boolean, Boolean ByRef)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:32:20 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:34:24 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:35:08 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:37:13 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:37:59 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:44:17 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 04:45:29 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.getMasterBOM(String subRefinery, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 70
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 221
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:15:49 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 237
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 195
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:26:38 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 237
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 195
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:27:42 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 237
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 195
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:40:08 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:40:29 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:41:19 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:46:07 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 241
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Models\BOMMasterTag.cs:line 198
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 203
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 23-03-2017 05:56:02 PM
+-----------------------------------------------------------
+Message: Invalid attempt to read when no data is present.
+StackTrace:    at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MvcApplication2.Models.BOMMasterTag.GetBomCategoryDetails(String component, String subRefinery)
+   at MvcApplication2.Models.BOMMasterTag.getIsSavedList(String PONO)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: System.Data
+TargetSite: Void CheckDataIsReady(Int32, Boolean, Boolean, System.String)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:30:08 AM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 331
+Source: mscorlib
+TargetSite: TValue get_Item(TKey)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:30:25 AM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 331
+Source: mscorlib
+TargetSite: TValue get_Item(TKey)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:30:53 AM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 331
+Source: mscorlib
+TargetSite: TValue get_Item(TKey)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:31:25 AM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 331
+Source: mscorlib
+TargetSite: TValue get_Item(TKey)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:35:51 AM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 331
+Source: mscorlib
+TargetSite: TValue get_Item(TKey)
+-----------------------------------------------------------
+
+Time: 25-03-2017 10:40:53 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO)
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult CalculateBill(System.String, System.String, System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 02:11:24 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIServer.CheckFailedServer(PIServerError& serverError)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.CalculateBill(String ActualStartDateTime, String ActualEndDateTime, String SubRefinery, String isSave_status, String PONO) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 323
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+

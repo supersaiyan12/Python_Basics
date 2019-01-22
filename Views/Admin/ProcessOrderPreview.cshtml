@@ -1,0 +1,1076 @@
+﻿@model MvcApplication2.Models.BOMDetails
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Adani Wilmar </title>
+    <meta name="author" content="Sachin Khedkar">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="~/new/js/html5-trunk.js"></script>
+    <link href="~/new/icomoon/style.css" rel="stylesheet">
+    <link href="~/new/css/nvd-charts.css" rel="stylesheet">
+    <!-- Bootstrap css -->
+    <link href="~/new/css/main.css" rel="stylesheet">
+    <!-- fullcalendar css -->
+    <link href='~/new/css/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='~/new/css/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+</head>
+<body class="textcheck">
+    <header>
+        <div class="row-fluid">
+            <div class="span3">
+                <a href="#" class="logo">
+                    <img src="~/new/img/logo1.png" style="width:185px">
+
+                </a>
+            </div>
+            <div class="span6" style="align-items:center; margin-top: -79px; color: #FFF;" align="center">
+                <h3>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturing Automation System </h3>
+                <h4 style="margin-top:-8px !important;">  &nbsp;&nbsp;&nbsp;&nbsp;(PLC to SAP) </h4>
+            </div>
+            <div class="span3">
+                <div id="mini-nav">
+                    <ul class="hidden-phone">
+                        <li>
+                            <a href="#">Mundra Plant </a>
+                        </li>
+                        <li>
+                            <a href="#">Welcome @ViewBag.LoggedInUser</a>
+                        </li>
+                        <li>
+                            <a href="" onclick="Logout()"> Logout  <span class="fs1" aria-hidden="true" data-icon="&#xe0b1;"></span></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+
+        <div class="dashboard-wrapper" style="margin-left:5px !important;">
+            <div id="main-nav" class="hidden-phone hidden-tablet">
+                <ul>
+                    <li>
+                        <a href="@Url.Action("GetPOList", "Admin")">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></span> Process Order List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetSubmitedPOList", "Admin")">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe097;"></span> Submitted PO List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("RegisterUser", "Admin")">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe097;"></span> Manage Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="selected">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></span> Generate BOM
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="main-container">
+                <div class="navbar hidden-desktop">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <div class="nav-collapse collapse navbar-responsive-collapse">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="widget no-margin">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon=""></span> Process Order Details
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="row-fluid">
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Process Order No.:
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" disabled name="processOrderNo" value="@Html.DisplayFor(model => model.processOrederNo)" id="processOrderNo" class="span12" />
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <label class="control-label">
+                                            Material :
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" name="processOrderNo" disabled value="@Html.DisplayFor(model => model.material)" class="span12" />
+                                        </div>
+                                    </div>
+
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Quantity :
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" disabled name="quality" style="text-align:right !important;" value="@Html.DisplayFor(model => model.quantity)" class="span10" />
+                                            &nbsp; <span style="position:absolute !important; top:144px;">@Html.DisplayFor(model => model.uom) </span>
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Section   :
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" disabled name="refineryName" id="subrefineryName" value="@Html.DisplayFor(model => model.subRefineryName)" class="span12" />
+                                            <input type="hidden" disabled name="refinery" id="subrefinery" value="@Html.DisplayFor(model => model.refinery)" class="span12" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Planned Start :
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" id="plantStartDate_show" disabled value="" class="span12" />
+
+                                            <input type="hidden" id="plantStartDate" disabled value="@Html.DisplayFor(model => model.PlanStartDate) @Html.DisplayFor(model => model.PlanStartTime)" class="span12" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Planned End :
+                                        </label>
+                                        <div class="controls controls-row">
+                                            <input type="text" id="plantEndDate_show" disabled value="" class="span12" />
+
+                                            <input type="hidden" id="plantEndDate" disabled value="@Html.DisplayFor(model => model.PlanEndDate) @Html.DisplayFor(model => model.PlanEndTime)" class="span12" />
+
+                                            <input type="hidden" id="isSave_active_start_date" value="@Html.DisplayFor(model => model.ActualStartDate)  @Html.DisplayFor(model => model.ActualStartTime)" class="span12" />
+                                            <input type="hidden" id="isSave_active_end_date" value="@Html.DisplayFor(model => model.ActualEndDate)  @Html.DisplayFor(model => model.ActualEndTime)" class="span12" />
+                                            <input type="hidden" id="isSave_satatus" value="@Html.DisplayFor(model => model.isSaved)" class="span12" />
+                                            <input type="hidden" id="IDOCNumber" value="@Html.DisplayFor(model => model.IDOCNumber)" class="span12" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="span3">
+
+                                        <label class="control-label">
+                                            Posting Date :
+                                        </label>
+
+                                        <div class="">
+                                            <div id="datetimepicker2" class="input-append date datetimepicker12">
+                                                <input data-format="dd-MM-yyyy hh:mm:ss" type="text" id="posting_date" value="@Html.DisplayFor(model => model.postingDate)" readonly>
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <label class="control-label">
+                                            Production  Date :
+                                        </label>
+
+                                        <div class="">
+                                            <div id="datetimepicker2" class="input-append date datetimepicker12">
+                                                <input data-format="dd-MM-yyyy hh:mm:ss" type="text" id="production_date" name="production_date" value="@Html.DisplayFor(model => model.productionDate)" readonly>
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row-fluid">
+
+                    <div class="span8">
+                        <div class="widget no-margin">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Load Chart
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div id="container" style="height:270px !important;"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span4">
+                        <div class="widget no-margin">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Date Select
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <p>
+                                    <labe>Actual Start Date  <span style="font-size:10px !important; display:none; color:red;" id="validation_id_start_date">Please select Actual Start Date  </span> </labe><div class="well">
+                                        <div id="datetimepicker1" class="input-append date datetimepicker12">
+                                            <input data-format="dd-MM-yyyy hh:mm:ss" type="text" id="selected_start" readonly>
+                                            <span class="add-on">
+                                                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                                                </i>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                </p>
+                                <p>
+                                    <labe> Actual End Date  <span style="font-size:10px !important; display:none; color:red;" id="validation_id_end_date"> Please select Actual End Date  </span> </labe>
+
+                                    <div class="well">
+                                        <div id="datetimepicker123" class="input-append date datetimepicker12">
+                                            <input data-format="dd-MM-yyyy hh:mm:ss" type="text" id="selected_end" readonly>
+                                            <span class="add-on">
+                                                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                                                </i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+
+                    <div class="span12">
+                        <div class="widget no-margin">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Bill of Material (BOM)
+                                </div>
+                            </div>
+                            <div class="widget-body">
+
+
+                                <div class="row-fluid">
+
+                                    <div class="span12">
+
+                                        <div class="row-fluid accept_no">
+                                            <div id="dynamicDiv1" class="row-fluid"></div>
+                                        </div>
+                                        <div class="row-fluid accept_no">
+
+                                            <div class="span12">
+                                                <div class="widget no-margin">
+                                                    <div class="widget-header">
+                                                        <div class="title">
+                                                            <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Characterisric
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-body">
+                                                        <div id="dynamicDiv2" class="row-fluid"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div>&emsp;</div>
+                    <div>&emsp;</div>
+                </div>
+            </div><!-- dashboard-container -->
+        </div><!-- container-fluid -->
+
+        <header>
+            <p style="text-align:center; vertical-align: central;  margin-top:-57px; color:#FFFFFF; font-size:17px; font-weight:300;">
+                Design And  Developed by ECGIT Pune. For any issues please contact: <mailto:adaniwilmar.support@ecgit.com>adaniwilmar.support@ecgit.com</mailto:adaniwilmar.support@ecgit.com>
+            </p>
+        </header>
+
+        <script src="~/new/js/jquery.min.js"></script>
+        <script class="include" type="text/javascript" src="~/new/js/script.js"></script>
+        <style href="~/new/js/style.css" type="text/css"></style>
+        <script src="~/new/js/bootstrap.js"></script>
+
+
+        <link href="~/CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <script src="~/CSS/bootstrap-datetimepicker.min.js"></script>
+
+        <!-- Flot charts -->
+        <script src="~/new/js/flot/jquery.flot.js"></script>
+        <script src="~/new/js/flot/jquery.flot.selection.js"></script>
+        <script src="~/new/js/flot/jquery.flot.pie.js"></script>
+
+
+        <!-- Tiny scrollbar js -->
+        <script src="~/new/js/tiny-scrollbar.js"></script>
+
+        <!-- Sparkline charts -->
+        <!-- Datatables JS -->
+        <script src="~/new/js/jquery.dataTables.js"></script>
+        <!-- Calendar Js -->
+        <script src='~/new/js/fullcalendar/jquery-ui-1.10.2.custom.min.js'></script>
+        <script src='~/new/js/fullcalendar/fullcalendar.min.js'></script>
+        <!-- Custom Js -->
+
+        <script src="~/new/js/custom-calendar.js"></script>
+        <script src="~/new/js/theming.js"></script>
+
+        <script src="~/Scripts/moment.js"></script>
+        <script src="~/Scripts/moment-timezone.js"></script>
+
+        <script src="~/Scripts/jquery.numeric.js"></script>
+
+        <script type="text/javascript">
+
+
+            $(function () {
+                /*  $('.datetimepicker12').datetimepicker({
+                      language: 'pt-BR'
+                  });*/
+            });
+        </script>
+
+
+        <script>
+            function LoadMap() {
+
+                $("#check_BOM_div").remove();
+                $("#id_check_charctoristic").remove();
+
+                $("#buttunenable").css({ 'display': "none" });
+                var subRefinery = $("#subrefinery").val();
+                var actualStartDate = $("#selected_start").val();
+                var actualEndDate = $("#selected_end").val();
+                var actualStartDate_converted12 = moment(actualStartDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY hh:mm a");
+                var actualEndDate_converted12 = moment(actualEndDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY hh:mm a");
+
+                var new_actual_start_date = toTimestamp(actualStartDate_converted12);
+                var new_actual_end_date = toTimestamp(actualEndDate_converted12);
+
+                if (new_actual_end_date < new_actual_start_date) {
+                    alert("Please check actual end date and time, it should not be greater than actual start date and time");
+                    return false;
+                } else {
+                    /* For Server Date   */
+                    var actualStartDate_converted = moment(actualStartDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY HH:mm:ss");
+                    var actualEndDate_converted = moment(actualEndDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY HH:mm:ss");
+
+                    /* For Local Date   */
+                    var actualStartDateTime = actualStartDate_converted;
+                    var actualEndDateTime = actualEndDate_converted;
+
+                    var actualStartDate_val = toTimestamp(actualStartDateTime);
+                    var actualEndDate_val = toTimestamp(actualEndDateTime);
+
+                    $.ajax({
+                        url: '@Url.Action("LoadGraph", "Admin")',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: { PlantStartDateTime: actualStartDateTime, PlantEndDateTime: actualEndDateTime, SubRefinery: subRefinery },
+                        success: function (response) {
+
+                            if (response != null) {
+                                chart_call(response.value);
+                            } else {
+                                alert("result is null");
+                            }
+                        },
+                        error: function (response) {
+                            alert("Exception occur");
+                        }
+                    })
+                }
+            }
+        </script>
+
+        <input type="hidden" id="is_check" value="" />
+
+        <script language="javascript">
+
+            function add(label1, value1) {
+                var formRow = document.createElement('div');
+                formRow.setAttribute("class", "form-row");
+                var formLabel = document.createElement('div');
+                formLabel.setAttribute("class", "form-row-label right-text");
+                var label = document.createElement('Label');
+                label.innerHTML = label1;
+                formLabel.appendChild(label);
+                var formRowField = document.createElement('div');
+                formRowField.setAttribute("class", "form-row-feild");
+                var element = document.createElement("input");
+                //Assign different attributes to the element.
+                element.setAttribute("type", "text");
+                element.setAttribute("value", value1);
+                element.setAttribute("name", "material");
+                element.setAttribute("class", "txtBox");
+                formRowField.appendChild(element)
+                var dynamicDiv = document.getElementById("dynamicDiv");
+                formRow.appendChild(formLabel);
+                formRow.appendChild(formRowField);
+                dynamicDiv.appendChild(formRow);
+            }
+
+            function ValidateActualDatePO(statuse_save) {
+                var actualStartDate = $("#selected_start").val();
+                var actualEndDate = $("#selected_end").val();
+                var subRefinery = $("#subrefinery").val();
+                var Issave_PO = $("#processOrderNo").val();
+                var actualStartDate_converted12 = moment(actualStartDate, 'DD-MM-YYYY HH:mm:ss').format("MM/DD/YYYY hh:mm a");
+                var splite_dat_time = actualStartDate_converted12.split(' ');
+                var actual_start_date = splite_dat_time[0];
+                var actual_time = splite_dat_time[1] + splite_dat_time[2];
+                $.ajax({
+                    url: '@Url.Action("ValidateActualDatePO", "Admin")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: { ActualStartDate: actual_start_date, ActualstartTime: actual_time, SubRefinery: subRefinery },
+                    success: function (response) {
+                        if (response != null) {
+                            if (response.value == 'exits' && statuse_save == '2') {
+                                alert('Please check Actual start datetime and Actual end datetime, this is allready save agianst another PO');
+                            } else {
+
+                                show_characteristic(Issave_PO, statuse_save)
+
+                            }
+                        } else {
+                            alert("result is null");
+                        }
+                    },
+                    error: function (response) {
+                        alert("Exception occur");
+                        //console.log("The response " + response.value);
+                    }
+                })
+            }
+
+            function show_characteristic(Issave_PO, statuse_save) {
+
+                $.ajax({
+                    url: '@Url.Action("CalculateCharacteristic", "Admin")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: { PONO: Issave_PO, SaveStatus: statuse_save },
+                    success: function (response) {
+
+                        CalculateBill(JSON.parse(response.value), statuse_save);
+                    },
+                    error: function (response) {
+                        alert("Record not found")
+                    }
+                })
+            }
+
+
+            var responseList = [];
+            var characterList = [];
+            var chemicalManualEntry = [];
+            function CalculateBill(characteristicdata, statuse_save) {
+
+                document.getElementById("dynamicDiv1").innerHTML = "";
+                document.getElementById("dynamicDiv2").innerHTML = "";
+
+                var actualStartDate = $("#selected_start").val();
+                var actualEndDate = $("#selected_end").val();
+                var isSave_status = $("#isSave_satatus").val();
+                var Issave_PO = $("#processOrderNo").val();
+                var subRefinerysd = $("#subrefinery").val();
+                var IDOCNumber = $("#IDOCNumber").val();
+
+                var actualStartDate_converted12 = moment(actualStartDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY hh:mm a");
+                var actualEndDate_converted12 = moment(actualEndDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY hh:mm a");
+
+                var new_actual_start_date = toTimestamp(actualStartDate_converted12);
+                var new_actual_end_date = toTimestamp(actualEndDate_converted12);
+
+                if (new_actual_end_date < new_actual_start_date) {
+                    alert("Please check actual end date and time, it should not be greater than actual start date and time");
+                    document.getElementById("dynamicDiv1").innerHTML = "";
+                    $("#buttunenable").css({ 'display': "none" });
+                    return false;
+                } else {
+
+                    if (actualStartDate == '' || actualEndDate == '') {
+                        if (actualStartDate == '') {
+                            $("#validation_id_start_date").css({ 'display': "block" });
+                        } else {
+                            $("#validation_id_start_date").css({ 'display': "none" });;
+                        }
+                        if (actualEndDate == '') {
+                            $("#validation_id_end_date").css({ 'display': "block" });
+                        } else {
+                            $("#validation_id_end_date").css({ 'display': "none" });
+                        }
+                        return false;
+                    }
+
+                    /* For Server Date */
+                    var actualStartDate_converted = moment(actualStartDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY HH:mm:ss");
+                    var actualEndDate_converted = moment(actualEndDate, 'DD-MM-YYYY HH:mm:ss').format("MM-DD-YYYY HH:mm:ss");
+
+                    $.ajax({
+                        url: '@Url.Action("CalculateBill", "Admin")',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: { ActualStartDateTime: actualStartDate_converted, ActualEndDateTime: actualEndDate_converted, SubRefinery: subRefinerysd, isSave_status: '1', PONO: Issave_PO, IDOCNumber: parseInt(IDOCNumber) },
+                        success: function (response) {
+                            if (response != null) {
+
+                                document.getElementById("dynamicDiv1").innerHTML = "";
+                                var Json_array = JSON.parse(response.value);
+                                //console.log(response.value);
+
+                                var append_div_open = ' <div class="row-fluid" id="check_BOM_div">';
+                                var append_div_enable = '<div class="row-fluid"><div class="span6"><div class="widget no-margin"><div class="widget-header"><div class="title"><span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> PLC Data </div></div><div class="widget-body"><div class="row-fluid">';
+                                var append_div_disable = '<div class="span6"><div class="widget no-margin"><div class="widget-header"><div class="title"><span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span>  Manual Entry</div></div><div class="widget-body"><div class="row-fluid">';
+                                var l = 0;
+                                var k = 0;
+
+                                var Product = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Product</div>';
+                                var Utilities = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Utilities</div>';
+                                var Chemicals = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Chemicals</div>';
+                                var By_Products = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> By Products/Co-Product</div>';
+                                var Raw_Material = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Raw Material</div>';
+                                var general_entry = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px;color:red"> Unknown Component </div>';
+                                var r = 0;
+                                var p = 0;
+                                var u = 0;
+                                var b = 0;
+                                var c = 0;
+                                var g = 0;
+
+                                var Product1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Product</div>';
+                                var Utilities1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Utilities</div>';
+                                var Chemicals1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Chemicals</div>';
+                                var By_Products1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> By Products/Co-Product</div>';
+                                var Raw_Material1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px"> Raw Material</div>';
+                                var general_entry1 = '<div style="border-bottom:1px solid #ccc; font-weight: 700; padding-bottom:5px; margin-bottom:5px; color:red"> Unknown Component</div>';
+                                var r1 = 0;
+                                var p1 = 0;
+                                var u1 = 0;
+                                var b1 = 0;
+                                var c1 = 0;
+                                var g1 = 0;
+
+                                for (var i = 0; i < Json_array.length; i++) {
+                                    var new_array_single = Json_array[i];
+                                    var PITag = new_array_single.PITag;
+                                    var isManual = new_array_single.isManual;
+                                    var BOMCategory = new_array_single.BOMCategory;
+                                    var component = new_array_single.component;
+                                    var componentDescription = new_array_single.componentDescription;
+                                    var quantity = new_array_single.quantity;
+                                    var actualQuantity = new_array_single.ActualQuantity;
+                                    var concentrationQuantity = new_array_single.ConcentrationQuantity;
+                                    var uom = new_array_single.uom;
+                                    var Batch = new_array_single.Batch;
+
+                                    if (Batch == '') {
+                                        Batch = "NA";
+                                    }
+                                    responseList.push(component)
+                                    if (isManual == true) {
+                                        if (BOMCategory == 'Raw-Material') {
+                                            if (parseFloat(quantity) > 0) {
+                                                Raw_Material += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span6"><input type="text" class="span8 positive-integer" style="text-align:right !important;" name="' + component + '" disabled disabled disabled disabled value="' + quantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            } r = r + 1;
+                                        } else if (BOMCategory == 'Product') {
+                                            if (parseFloat(quantity) > 0) {
+                                                Product += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span6"><input type="text" class="span8 positive-integer" name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            } p = p + 1;
+                                        } else if (BOMCategory == 'Utilities') {
+                                            u = u + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                Utilities += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span6"><input class="span8 positive-integer" type="text"  name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            }
+                                        } else if (BOMCategory == 'Chemicals') {
+                                            c = c + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                Chemicals += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + '  : </div><div class="span6"><input class="span8 positive-integer" type="text"  name="' + component + '" disabled disabled disabled disabled  style="text-align:right !important;" value="' + actualQuantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            }
+                                        } else if (BOMCategory == 'By-Products / Co-Products') {
+                                            b = b + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                By_Products += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span6"><input class="span8 positive-integer" type="text"  name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            }
+                                        } else {
+                                            g = g + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                general_entry += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span6"><input class="span8 positive-integer" type="text"  name="' + component + '" disabled disabled disabled disabled disabled disabled  style="text-align:right !important;"value="' + quantity + '" id="' + component + '"> ' + uom + '<input type="hidden"  name="' + component + '_status" value="1" id="' + component + '_status" class="span12"></div></div>';
+                                            }
+                                        }
+                                        l++;
+                                    } else {
+                                        if (BOMCategory == 'Raw-Material') {
+                                            if (parseFloat(quantity) > 0) {
+                                                Raw_Material1 += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><input type="hidden"  name="' + component + '_status" value="0" id="' + component + '_consantration" class="span12"><div class="span6"><input type="text" class="span8" disabled name="' + component + '" disabled disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                            } r1 = r1 + 1;
+                                        } else if (BOMCategory == 'Product') {
+                                            p1 = p1 + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                Product1 += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><input type="hidden"  name="' + component + '_status" value="0" id="' + component + '_consantration" class="span12"><div class="span6"><input type="text" class="span8" disabled name="' + component + '" disabled disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                            }
+                                        } else if (BOMCategory == 'Utilities') {
+                                            u1 = u1 + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                Utilities1 += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><input type="hidden"  name="' + component + '_status" value="0" id="' + component + '_consantration" class="span12"><div class="span6"><input type="text" class="span8" disabled name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                            }
+                                        } else if (BOMCategory == 'Chemicals') {
+
+                                            c1 = c1 + 1;
+                                            if (concentrationQuantity == "" || concentrationQuantity == "0") {
+                                                concentrationQuantity_new = '1';
+                                            } else {
+                                                concentrationQuantity_new = concentrationQuantity;
+                                            }
+                                            chemicalManualEntry.push(component);
+                                            if (component == 'C52090105') {
+                                                if (parseFloat(quantity) > 0) {
+                                                    Chemicals1 += '<div class="row-fluid"> <div class="span3">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span3"> <input class="span12" type="hidden" disabled name="' + component + '_value_PI" style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + k + '_value_PI" ><input type="hidden"  name="' + component + '_status" value="0"  id="' + k + '_consantration" class="span12"></div> <div class="span3"><input type="hidden" class="span12 positive-integer"  name="' + component + '_add" disabled style="text-align:right !important;" onkeyup="change_unit_calculation(' + k + ')" value="' + concentrationQuantity_new + '" id="' + k + '_add"></div><div class="span3"><input type="text" class="span8 ' + k + '_addaw" disabled name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + actualQuantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                                }
+                                            } else {
+                                                if (parseFloat(quantity) > 0) {
+                                                    Chemicals1 += '<div class="row-fluid"> <div class="span3">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><div class="span3"> <input class="span12" type="text" disabled name="' + component + '_value_PI" style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + k + '_value_PI" ><input type="hidden"  name="' + component + '_status" value="0"  id="' + k + '_consantration" class="span12"></div> <div class="span3"><input type="text" class="span12 positive-integer"  name="' + component + '_add" disabled style="text-align:right !important;" onkeyup="change_unit_calculation(' + k + ')" value="' + concentrationQuantity_new + '" id="' + k + '_add"></div><div class="span3"><input type="text" class="span8 ' + k + '_addaw" disabled name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + actualQuantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                                }
+                                            }
+                                        } else if (BOMCategory == 'By-Products / Co-Products') {
+                                            b1 = b1 + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                By_Products1 += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><input type="hidden"  name="' + component + '_status" value="0" id="' + component + '_consantration" class="span12"><div class="span6"><input type="text" class="span8" disabled name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                            }
+                                        } else {
+                                            g1 = g1 + 1;
+                                            if (parseFloat(quantity) > 0) {
+                                                general_entry1 += '<div class="row-fluid"> <div class="span6">' + componentDescription + ' (Batch :- ' + Batch + ')' + ' : </div><input type="hidden"  name="' + component + '_status" value="0" id="' + component + '_consantration" class="span12"><div class="span6"><input type="text" class="span8" disabled name="' + component + '" disabled disabled disabled disabled style="text-align:right !important;" value="' + quantity.toFixed(3) + '" id="' + component + '"> ' + uom + '</div></div>';
+                                            }
+                                        }
+                                        var count_check = count_check + k;
+                                        k++;
+                                    }
+                                }
+
+                                if (r == "" || r == "0") { var attached_raw_material = ""; } else { var attached_raw_material = Raw_Material; }
+                                if (p == "" || p == "0") { var attached_product = ""; } else { var attached_product = Product; }
+                                if (u == "" || u == "0") { var attached_Utilities = ""; } else { var attached_Utilities = Utilities; }
+                                if (c == "" || c == "0") { var attached_Chemicals = ""; } else { var attached_Chemicals = Chemicals; }
+                                if (b == "" || b == "0") { var attached_By_Products = ""; } else { var attached_By_Products = By_Products; }
+                                if (g == "" || g == "0") { var attached_general_entry = ""; } else { var attached_general_entry = general_entry; }
+
+
+                                if (r1 == "" || r1 == "0") { var attached_raw_material1 = ""; } else { var attached_raw_material1 = Raw_Material1; }
+                                if (p1 == "" || p1 == "0") { var attached_product1 = ""; } else { var attached_product1 = Product1; }
+                                if (u1 == "" || u1 == "0") { var attached_Utilities1 = ""; } else { var attached_Utilities1 = Utilities1; }
+                                if (c1 == "" || c1 == "0") { var attached_Chemicals1 = ""; } else { var attached_Chemicals1 = Chemicals1; }
+                                if (b1 == "" || b1 == "0") { var attached_By_Products1 = ""; } else { var attached_By_Products1 = By_Products1; }
+                                if (g1 == "" || g1 == "0") { var attached_general_entry1 = ""; } else { var attached_general_entry1 = general_entry1; }
+                                var characteristic = '<div class="row-fluid" id="id_check_charctoristic">';
+                                for (var i = 0; i < characteristicdata.length; i++) {
+                                    var new_array_single = characteristicdata[i];
+                                    characterList.push(new_array_single.CID);
+                                    var style_check = '';
+                                    if (i == 0 || i == 1) {
+                                        style_check = 'margin-left:41px';
+                                    } else {
+
+                                    }
+
+                                    characteristic += '<div class="span3"  style="' + style_check + '"> ' + new_array_single.CharName + ' </div><div class="span3"> <input class="span12" type="text"  name="' + new_array_single.CharName + '" disabled style="text-align:right !important;" value="' + new_array_single.CharValue + '" id="' + new_array_single.CID + '" ></div>';
+                                }
+                                characteristic += '</div>';
+                                var actual_append_data = append_div_open + "<input type='hidden' id='chemicalcount' name='chemicalcount' value='" + c1 + "'>" + append_div_enable + attached_raw_material + attached_product1 + attached_Utilities1 + attached_Chemicals1 + attached_raw_material1 + attached_By_Products1 + attached_general_entry1 + '</div></div></div></div>' + append_div_disable + attached_product + attached_Utilities + attached_Chemicals + attached_By_Products + attached_general_entry + '</div></div></div></div></div></div></div>';
+                                $("#dynamicDiv1").append(actual_append_data);
+                                $("#dynamicDiv2").append(characteristic);
+                                $("#buttunenable").css({ 'display': "block" });
+
+                                $(".positive-integer").numeric({ negative: true }, function () { alert("Please enter numeric values only"); this.value = ""; this.focus(); });
+
+                                if (isSave_status == "True") {
+                                    chemicalcount();
+                                }
+
+
+                            } else {
+                                alert("result is null");
+                            }
+                        },
+                        error: function (response) {
+                            alert("Record not found for Calculated BOM");
+                        }
+                    })
+                }
+            }
+
+
+        </script>
+
+
+        <script src="~/Scripts/highstock.js"></script>
+
+        <script>
+
+            function toTimestamp(strDate1) {
+
+                var dateTimeParts1 = strDate1.split('-');
+                var strDate = dateTimeParts1[0] + '/' + dateTimeParts1[1] + '/' + dateTimeParts1[2];
+                var datum = Date.parse(strDate);
+                return datum + 19800000;
+            }
+
+            function convertDate(date) {
+
+                // # valid js Date and time object format (YYYY-MM-DDTHH:MM:SS)
+                var dateTimeParts = date.split(' ');
+
+                // # this assumes time format has NO SPACE between time and am/pm marks.
+                if (dateTimeParts[1].indexOf(' ') == -1 && dateTimeParts[2] === undefined) {
+
+                    var theTime = dateTimeParts[1];
+
+                    // # strip out all except numbers and colon
+                    var ampm = theTime.replace(/[0-9:]/g, '');
+
+                    // # strip out all except letters (for AM/PM)
+                    var time = theTime.replace(/[[^a-zA-Z]/g, '');
+
+                    if (ampm == 'pm') {
+
+                        time = time.split(':');
+
+                        // # if time is 12:00, don't add 12
+                        if (time[0] == 12) {
+                            time = parseInt(time[0]) + ':' + time[1] + ':00';
+                        } else {
+                            time = parseInt(time[0]) + 12 + ':' + time[1] + ':00';
+                        }
+
+                    } else { // if AM
+
+                        time = time.split(':');
+
+                        // # if AM is less than 10 o'clock, add leading zero
+                        if (time[0] < 10) {
+                            time = '0' + time[0] + ':' + time[1] + ':00';
+                        } else {
+                            time = time[0] + ':' + time[1] + ':00';
+                        }
+                    }
+                }
+                // # create a new date object from only the date part
+                var dateObj = new Date(dateTimeParts[0]);
+
+                // # add leading zero to date of the month if less than 10
+                var dayOfMonth = (dateObj.getDate() < 10 ? ("0" + dateObj.getDate()) : dateObj.getDate());
+
+                // # parse each date object part and put all parts together
+                var yearMoDay = dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dayOfMonth;
+
+                // # finally combine re-formatted date and re-formatted time!
+                var date = new Date(yearMoDay + 'T' + time);
+
+                return date;
+
+            }
+
+
+            // var timeInMillis = new Date.parse(s);
+
+            function chart_call(data) {
+
+
+                //  console.log(JSON.stringify(data));
+
+
+                var new_fadeIn_array = [];
+                var result = data;
+                $.each(result, function (k, v) {
+                    new_fadeIn_array.push(v);
+                });
+
+                var fadeIn_data = [];
+                var fadeout_data = [];
+
+                var feedin_array = new_fadeIn_array[0];
+                var feedout_array = new_fadeIn_array[1];
+
+
+                var fadeIn_data = [];
+                for (u = 0; u < feedin_array.length; u++) {
+                    var new_array = feedin_array[u];
+
+                    var date_check = new_array.Key;
+                    var value_key = toTimestamp(date_check);
+                    var quantity_check = new_array.Value;
+                    fadeIn_data.push([value_key, quantity_check]);
+                }
+
+
+
+                var fadeout_data = [];
+                for (k = 0; k < feedout_array.length; k++) {
+                    var new_array1 = feedout_array[k];
+                    var date_check1 = new_array1.Key;
+
+                    var quantity_data = new_array1.Value;
+
+                    //ar val_check1 = quantity_data.replace('"', '');
+
+                    var value_key1 = toTimestamp(date_check1);
+
+                    fadeout_data.push([value_key1, quantity_data]);
+                }
+
+
+                //   console.log(JSON.stringify(fadeout_data));
+
+
+                /*
+                            $.each(feedout_array, function (k, v) {
+                                var value_key = toTimestamp(k);
+                                fadeout_data.push([value_key, v]);
+                            });*/
+
+
+
+
+                // console.log(JSON.stringify(fadeIn_data));
+
+
+
+                // Create the chart
+                Highcharts.stockChart('container', {
+                    //var array="[[1268092800000,31.86],[1268179200000,32.12],[1268265600000,32.21],[1268352000000,32.37],[1268611200000,31.98],[1268697600000,32.06],[1268784000000,32.02],[1268870400000,32.09],[1268956800000,31.75],[1269216000000,32.11],[1269302400000,32.62],[1269388800000,32.77],[1269475200000,32.38],[1269561600000,32.99],[1269820800000,33.20],[1269907200000,33.69][1269993600000,33.57]]";
+                    legend: {
+                        enabled: true,
+                        align: 'right',
+                        backgroundColor: '#FFF',
+                        borderColor: '#E8E5E9',
+                        borderWidth: 1,
+                        layout: 'vertical',
+                        verticalAlign: 'top',
+                        y: 100,
+                        shadow: true
+                    },
+
+                    xAxis: {
+                        title: {
+                            text: 'Date Range '
+                        },
+                        events: {
+                            afterSetExtremes: function (event) {
+
+                                var start_date = new Date(event.min);
+                                var end_date = new Date(event.max);
+
+                                var starttime = moment(start_date).format("DD-MM-YYYY h:mm:ss");
+                                var endtime = moment(end_date).format("DD-MM-YYYY h:mm:ss");
+                                $("#selected_start").val(starttime);
+                                $("#selected_end").val(endtime);
+
+                                //console.log(event)
+                                // console.log(starttime + ' ' + endtime);
+                                // how to get sum of y-axis data between start and end data?
+                            },
+
+                        },
+                    },
+
+                    rangeSelector: {
+                        selected: 1,
+                        enabled: false
+
+                    },
+
+                    series: [{
+                        name: 'Feed In',
+                        data: fadeIn_data,
+                        tooltip: {
+                            valueDecimals: 2
+                        }
+                    },
+                        {
+                            name: 'Feed Out',
+                            data: fadeout_data,
+                            tooltip: {
+                                valueDecimals: 2
+                            }
+                        }]
+                });
+
+
+            };
+
+        </script>
+        <script>
+
+            function _call_values_chart() {
+
+                var chart = $('#container').highcharts();
+                //  var axisMax = chart.xAxis[0].max; // Max of the axis
+                // var dataMax = chart.xAxis[0].dataMax; // Max of the data
+
+
+
+                var extremes = chart.xAxis[0].getExtremes(),
+                  start = new Date(extremes.min),
+                  end = new Date(extremes.max);
+                var starttime = moment(start).format("DD-MM-YYYY h:mm:ss");
+                var endtime = moment(end).format("DD-MM-YYYY h:mm:ss");
+
+                //  var date2 = new Date(dataMin);
+                //   alert('date start  : ' + starttime + 'date end : ' + endtime);
+            }
+        </script>
+        <script>
+            function Logout() {
+
+                if (confirm("Are you sure to you want to logout?")) {
+
+                    $.ajax({
+                        url: '@Url.Action("LogOut","Login")',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response != null && response.status) {
+                                // alert("Logged out Successfuly.");
+                                var name = sessionStorage.getItem("name");
+                                var id = sessionStorage.getItem("id");
+                                sessionStorage.removeItem(name);
+                                sessionStorage.removeItem(id);
+                                window.location.reload();
+
+
+                            }
+                        }
+                    });
+                }
+                return false;
+            }
+
+
+        </script>
+
+
+
+        <script>
+            //   LoadMap();
+
+
+
+            function check_actual_date() {
+
+
+                var isSave_satatus = "True";
+
+
+                if (isSave_satatus == 'False') {
+
+                    var plantStartDate = $("#plantStartDate").val();
+                    var plantEndDate = $("#plantEndDate").val();
+
+                    var expploaddata = plantStartDate.split("-");
+                    var expploaddata2 = plantEndDate.split("-");
+
+                    //dd.mm.yy
+                    //21-03-2017
+                    //yy-mm-dd
+
+                    var data_time1 = expploaddata[2].split(" ");
+                    var data_time2 = expploaddata2[2].split(" ");
+
+
+                    var plantStartDate1 = data_time1[0] + '-' + expploaddata[1] + '-' + expploaddata[0] + ' ' + data_time1[1];
+
+                    var plantEndDate1 = data_time2[0] + '-' + expploaddata2[1] + '-' + expploaddata2[0] + ' ' + data_time2[1];
+
+
+
+                    //   alert(plantStartDate1);
+
+                } else {
+                    var plantStartDate = $("#isSave_active_start_date").val();
+                    var plantEndDate = $("#isSave_active_end_date").val();
+
+
+                    var plantStartDate1 = moment(plantStartDate, 'MM/DD/YYYY HH:mm:ss a').format("DD-MM-YYYY HH:mm:ss");
+                    var plantEndDate1 = moment(plantEndDate, 'MM/DD/YYYY HH:mm:ss a').format("DD-MM-YYYY HH:mm:ss");
+
+
+                }
+
+                $("#selected_start").val(plantStartDate1);
+                $("#selected_end").val(plantEndDate1);
+
+                if (isSave_satatus == 'True') {
+                    //   CalculateBill(1);
+                    //  ValidateActualDatePO(1);
+                }
+            }
+            check_actual_date();
+            LoadMap();
+            ValidateActualDatePO(1);
+
+            function select_date() {
+                $(".dropdown-menu").css('display', 'none');
+            }
+
+
+        </script>
+
+
+        <script type="text/javascript">
+
+            $(".positive-integer").numeric({ decimal: true, negative: true }, function () { alert("Please enter numeric values only"); this.value = ""; this.focus(); });
+
+        </script>
+
+        <script type="text/javascript">
+            function change_date() {
+                var plantStartDate_show = moment($("#plantStartDate").val(), 'YYYY-MM-DD HH:mm:ss').format("DD-MM-YYYY HH:mm:ss");
+                var plantEndDate_show = moment($("#plantEndDate").val(), 'YYYY-MM-DD HH:mm:ss').format("DD-MM-YYYY HH:mm:ss");
+                $("#plantStartDate_show").val(plantStartDate_show);
+                $("#plantEndDate_show").val(plantEndDate_show);
+            }
+            change_date();
+        </script>
+
+
+</body>
+</html>

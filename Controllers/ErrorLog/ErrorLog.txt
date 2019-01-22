@@ -1,0 +1,129 @@
+﻿Time: 24-03-2017 12:43:01 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 447
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 24-03-2017 12:43:04 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 447
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 24-03-2017 12:43:10 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 447
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 24-03-2017 12:43:21 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 447
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 24-03-2017 12:43:24 PM
+-----------------------------------------------------------
+Message: Index was outside the bounds of the array.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 447
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 01:53:52 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIServer.RemoteConnect(AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Int32 numRetries, IWin32Window owner, AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Boolean autoPrompt, IWin32Window owner, AFConnectionPreference preference, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 497
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 02:10:01 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIServer.RemoteConnect(AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Int32 numRetries, IWin32Window owner, AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 497
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 02:11:17 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIServer.RemoteConnect(AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Int32 numRetries, IWin32Window owner, AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 497
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 02:11:31 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIServer.CheckFailedServer(PIServerError& serverError)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 497
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 30/03/2017 02:11:59 PM
+-----------------------------------------------------------
+Message: Cannot connect to the PI Data Archive. Windows authentication trial failed because the authentication method was not tried. Trust authentication trial failed because insufficient privilege to access the PI Data Archive. 
+StackTrace:    at OSIsoft.AF.PI.PIException.ConvertAndThrowException(PIServer piServer, Exception ex, String message)
+   at OSIsoft.AF.PI.PIServer.RemoteConnect(AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Int32 numRetries, IWin32Window owner, AFConnectionPreference preference, NetworkCredential credential, PIAuthenticationMode authenticationMode, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.InternalConnect(Boolean autoPrompt, IWin32Window owner, AFConnectionPreference preference, Boolean checkConnectingAsSameUser)
+   at OSIsoft.AF.PI.PIServer.AutoConnect(Boolean allowDirectConnect, Boolean force)
+   at OSIsoft.AF.PI.PIPoint.FindPIPoint(PIServer piServer, String pointName)
+   at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in c:\Users\Administrator\Desktop\Adani Wilmar\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 497
+Source: OSIsoft.AFSDK
+TargetSite: Void ConvertAndThrowException(OSIsoft.AF.PI.PIServer, System.Exception, System.String)
+-----------------------------------------------------------
+
+Time: 25/05/2017 03:00:01 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in d:\WilmarDeployment\WilmarApplication\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 525
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 25/05/2017 03:06:20 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in d:\WilmarDeployment\WilmarApplication\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 525
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
+Time: 25/05/2017 04:01:16 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at MvcApplication2.Controllers.AdminController.LoadGraph(String PlantStartDateTime, String PlantEndDateTime, String SubRefinery) in d:\WilmarDeployment\WilmarApplication\WilmarApplication\MvcApplication2\Controllers\AdminController.cs:line 525
+Source: MvcApplication2
+TargetSite: System.Web.Mvc.JsonResult LoadGraph(System.String, System.String, System.String)
+-----------------------------------------------------------
+
